@@ -1,1 +1,1 @@
-# Simple-Stock-Calculation. This code is a simple stock calculations using an AEX Cloud API to determine the amount of shares you should by of each stock depending on the amount in your portfolio. Note that each stock is weighted the same. 
+# Simple-Stock-Calculation. This code is a simple stock calculations using an IEX Cloud API to determine the amount of shares you should by of each stock depending on the amount in your portfolio. Note that each stock is weighted the same. 
