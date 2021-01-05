@@ -4,6 +4,7 @@ import requests
 import xlsxwriter
 import math
 
+from secrets import IEX_CLOUD_API_TOKEN
 stocks = pd.read_csv('newstocks.csv')
 my_columns = ['Ticker','Stocks price','Market Cap','Shares to buy']
 
@@ -20,7 +21,7 @@ for i in range(0, len(symbol_groups)):
 
 final_dataframe = pd.DataFrame(columns = my_columns)
 for symbol_string in symbol_strings:
-    batch_api_call_url = f'https://sandbox.iexapis.com/stable/stock/market/batch?symbols={symbol_string}&types=quote&token=Tpk_059b97af715d417d9f49f50b51b1c448'
+    batch_api_call_url = f'https://sandbox.iexapis.com/stable/stock/market/batch?symbols={symbol_string}&types=quote&token={IEX_CLOUD_API_TOKEN}'
     data = requests.get(batch_api_call_url).json()
     for symbol in symbol_string.split(','):
         final_dataframe=final_dataframe.append(
